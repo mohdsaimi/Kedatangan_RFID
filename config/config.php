@@ -1,11 +1,4 @@
 <?php
-date_default_timezone_set('Asia/Kuala_Lumpur');
-
-/* $uname="root";
-$passwd="";
-$database="kedatangan_rfid";
-$sms2=mysqli_connect('localhost',$uname,$passwd);
-mysqli_select_db($database) or die("tidak connect"); */
 
 date_default_timezone_set('Asia/Kuala_Lumpur');
 //session_start();
