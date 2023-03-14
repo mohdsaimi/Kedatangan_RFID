@@ -7,11 +7,9 @@ $uname="root";
 $passwd="";
 $database="kedatangan_rfid";
 
-$satem2s = mysqli_connect('localhost', $uname,$passwd,$database);
-if (!$satem2s) {
+$conn = mysqli_connect('localhost', $uname,$passwd,$database);
+if (!$conn) {
     die('Could not connect: ' . mysqli_error());
-}else{
-    echo "OK";
 }
 
 ?>
