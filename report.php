@@ -11,39 +11,45 @@
 
             <p></p>
             <h2>Laporan Kehadiran Pelajar</h2>
-            <p></p>
+           
+            <p></p>           
 
             <form method="post" action="">
             <div class="row">
                 <div class="col-md-1">
                     <div class="form-group">
-                    <label>Tarikh:</label>
+                    <label>Tarikh :</label>
                     </div>
                 </div>
                 <div class="col-sm-2"><input type="date" class="form-control" id="tarikh" name="tarikh"></div>
                 <div class="col-md-1"><button name="butang" value="view" type="view" class="btn btn-outline-secondary">View</button></div>
                 <div class="col-md-1">&nbsp;</div>
-            </div>
-            </form>
+            </div>      
+            </form>  
+           
             <p></p>
             <p></p>
 
             <?php
 
+            //$_SESSION['tarikh'] = $tarikh;
+
             if(count($_POST)>0) {
                 $butang=$_POST['butang'];
-
+                
                 //echo $butang;
 
                 if($butang=="view"){
                     $tarikh=$_POST['tarikh'];
 
                     $newDate = date("d-m-Y", strtotime($tarikh));  
+                    $newDate2 = date("Y-m-d", strtotime($tarikh));  
+                    $_SESSION['tarikh'] = $newDate2;
                     
                     //$message = $tarikh;
 
 
-/* kgjdoifjgpdjsf[gpjdfji] */
+            /* kgjdoifjgpdjsf[gpjdfji] */
 
 
 
@@ -345,6 +351,10 @@
 
                 }
 
+                echo '<p>
+                        <a target="_blank" href=generate_pdf.php>
+                        <button name="butang" value="pdf" type="pdf" class="btn btn-outline-secondary">Jana Laporan PDF</button></a>
+                        </p>';
 
             }else{
                 $message="Sila pilih tarikh !";
@@ -354,15 +364,9 @@
 
                 echo '<font color=green><b>'.$message.'</b></font>';
             }
-
-
+   
 	
 ?>
-
-<p>
-<!--     <a target="_self" href=add_pelajar.php>
-    <button type="button " class="btn btn-outline-success mb-3"><h3><b>+</b></h3></button></a> -->
-</p>
 
         </div>
     </div>
